@@ -45,7 +45,7 @@ build:
 
 build_static:
 	export GO15VENDOREXPERIMENT=1 
-	go build --ldflags '-extldflags "-static" -X main.build=$(CI_BUILD_NUMBER)' -o drone_static
+	go build --ldflags '-extldflags "-static" -X main.build=$(CI_BUILD_NUMBER)' -o drone_static -v 
 
 test:
 	export GO15VENDOREXPERIMENT=1 

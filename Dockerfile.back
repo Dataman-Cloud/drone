@@ -1,0 +1,17 @@
+FROM index.shurenyun.com/zqdou/ubuntu-go:1.5.1
+
+MAINTAINER zhguo zhguo@dataman-inc.com
+
+ENV GOPATH /go
+RUN mkdir -p /go/src/github.com/drone
+
+ADD . /go/src/github.com/drone/drone
+WORKDIR /go/src/github.com/drone/drone
+
+ENV GO15VENDOREXPERIMENT=1 
+RUN make gen_static 
+RUN make build_static
+
+EXPOSE 8989 
+
+CMD ./drone_static
