@@ -35,7 +35,8 @@ func GenScript(repo *model.Repo, build *model.Build, raw []byte, insecure bool, 
 		return nil, ErrBadBuild
 	}
 	config["clone"] = formClone(repo, registry, pluginPrefix)
-	config["publish"] = formPublish(repo, build, insecure, registry, storage, pluginPrefix)
+	// Do not need to perform our publish in Bank's CI,
+	// config["publish"] = formPublish(repo, build, insecure, registry, storage, pluginPrefix)
 	config["build"] = enhanceBuild(buildPlugin.(map[interface{}]interface{}))
 	config["cache"] = formCache(repo, registry, pluginPrefix)
 
