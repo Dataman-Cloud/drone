@@ -155,7 +155,7 @@ func PostHook(c *gin.Context) {
 	raw, sec, err := remote_.Script(user, repo, build)
 	if err != nil {
 		log.Errorf("failure to get .drone.yml for %s. %s", repo.FullName, err)
-		c.AbortWithError(404, err)
+		c.AbortWithError(420, err)
 		return
 	}
 
