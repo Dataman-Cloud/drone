@@ -14,7 +14,7 @@ import (
 	"github.com/drone/drone/shared/poller"
 	"github.com/drone/drone/shared/server"
 	"github.com/drone/drone/store/datastore"
-	reaper "github.com/ramr/go-reaper"
+	//	reaper "github.com/ramr/go-reaper"
 )
 
 // build revision number populated by the continuous
@@ -50,7 +50,7 @@ func main() {
 	poller.Load(env, store_)
 
 	// for cleaning zombie process
-	go reaper.Reap()
+	//	go reaper.Reap()
 
 	// setup the server and start the listener
 	server_ := server.Load(env)
