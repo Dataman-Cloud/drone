@@ -18,10 +18,10 @@ var (
 	DefaultEntrypoint = []string{"/bin/drone-exec"}
 
 	// default argument to invoke build steps
-	DefaultBuildArgs = []string{"--pull", "--cache", "--clone", "--build", "--deploy"}
+	DefaultBuildArgs = []string{"--pull", "--clone", "--build", "--deploy"}
 
 	// default argument to invoke build steps
-	DefaultPullRequestArgs = []string{"--pull", "--cache", "--clone", "--build"}
+	DefaultPullRequestArgs = []string{"--pull", "--clone", "--build"}
 
 	// default arguments to invoke notify steps
 	DefaultNotifyArgs = []string{"--pull", "--notify"}
