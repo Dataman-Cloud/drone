@@ -122,10 +122,13 @@ func formPublish(repo *model.Repo, build *model.Build, insecure bool, registry, 
 		"net":         "bridge",
 		"extra_hosts": getExtraHosts(),
 		"load":        cacheFile,
-		"save": map[string]interface{}{
-			"destination": cacheFile,
-			"tag":         "latest",
-		},
+		// FIXED(dsxiao): Because docker 1.10 need login, but the step seems
+		// not login docker registry. so temporily disable the save section.
+		// SRYD-1159, SRYD-1275
+		// "save": map[string]interface{}{
+		// 	"destination": cacheFile,
+		// 	"tag":         "latest",
+		// },
 	}
 
 	return map[string]interface{}{
